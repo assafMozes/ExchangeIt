@@ -1,0 +1,285 @@
+body {
+  /*padding: 50px;*/
+  /*display: grid;
+  grid-template-columns: [first] 50px [line2] auto [line3] 50px [end];*/
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display:grid;
+  height: 100vh;
+  grid-template-columns: 12% auto 12%;
+  grid-template-rows: 16% auto;
+  grid-template-areas: 
+    ". header ."
+    ". content ."
+
+    
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+/*header*/
+.header {
+    list-style-type: none;
+    /* height: 16vh; */
+    margin-bottom: 20px;
+    padding: 10px;
+    /* overflow: hidden; */
+    background-color: rgba(209, 209, 209, 0.56);
+    /* position: fixed; */
+    /* z-index: 5; */
+    /* top: 0; */
+    /* width: 100%;  */
+    /* height: 100%; */
+    grid-area: header; 
+    display:grid;
+    grid-template-columns: 30% auto 30%;
+    grid-template-rows: 20% auto 20%;
+    grid-template-areas: 
+      "bread . user"
+      " . logo  ."
+      "navBar navBar navBar"
+
+}
+.navBar{
+    grid-area: navBar; 
+    
+}
+.bread{
+    grid-area: bread;
+    justify-self:stretch;
+    
+    
+}
+.logo{
+    grid-area: logo; 
+    justify-self: stretch;
+    width: 100%;
+    height: 5vh
+    
+    
+}
+.logo img{
+    height: 100%;
+    width: auto;
+}
+.user{
+    grid-area: user; 
+    justify-self: end    
+    
+}
+
+.navBarItem {
+    float: right;
+    width: 16%;
+    margin: 0;
+
+}
+
+/*.navBarItem input{
+    float: right;
+}*/
+
+.login{
+    text-align: right;
+    padding: 5px;
+}
+
+.navBarItem a {
+    display: block;
+    color: white;
+    text-align: center;
+    /* padding: 34px 50px; */
+    text-decoration: none;
+    font-size: 1.3em
+} 
+
+.navBarItem a:hover {
+    background-color: #85C7F2;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%
+}
+
+.navBarLogo {
+    float: left;
+}
+/* content */
+.content{
+    grid-area: content; 
+    
+}
+/*position*/
+
+.position {
+    margin: 10px 0px;
+    border: solid black 1px;
+    padding: 3px;
+    background: #70B73F;
+    
+}
+
+.positionCss {
+    margin: 10px 0px;
+    border: solid black 1px;
+    padding: 3px;
+    background: #70B73F;
+    
+}
+
+/*search */
+
+.mainPageSearch{
+    display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.correntSkill{
+        background-color: #85C7F2;
+        border: 0.5px solid black;
+        border-radius: 0.2;
+        padding: 2px;
+        margin: 3px;
+
+}
+
+li {
+    list-style: none
+}
+
+/* oneObject */
+
+.oneObject {
+    color: green;
+    margin: 8px;
+    padding: 4px;
+    background: #27E093;
+    display:grid;
+    grid-template-columns:auto 20%;
+    grid-template-rows: 1 1;
+    grid-template-areas: 
+      "oneObject-cat oneObject-image"
+      "oneObject-subCat oneObject-image"
+      "oneObject-state oneObject-image"
+
+}
+
+.oneObject-cat{
+    grid-area: oneObject-cat; 
+    
+}
+
+.oneObject-subCat{
+    grid-area: oneObject-subCat; 
+    
+}
+
+.oneObject-image{
+    grid-area: oneObject-image; 
+    width: 100%;
+    /* height: 100%; */
+    
+}
+
+/* createProposal */
+
+.createProposal{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 30px auto;
+    width: 100%;
+        
+    /* grid-template-areas: 
+      "oneObject-cat oneObject-image" */
+}
+
+.createProposalConteiner.choosen {
+    border: 4px solid black;
+}
+.createProposalConteiner.my {
+    background: #9B5018;
+}
+.createProposalConteiner.his {
+    background: rgba(54, 93, 177, 0.81);
+}
+
+
+.createProposalHeader.hisName{
+    grid-column: 4/5;
+    grid-row: 1;
+}
+
+.createProposalHeader.makeButton{
+    grid-column: 2/4;
+    grid-row: 1;
+}
+.createProposalHeader.yourName{
+    grid-column: 1/2;
+    grid-row: 1;
+}
+
+/* proposalDealApproval */
+.proposalDealApproval{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width: 100%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background: white;
+    border: 2px solid black;
+}
+
+.proposalDealApprovalHeader {
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: center
+    
+}
+
+.proposalDealApprovalButton {
+    grid-column: 1/2;
+    grid-row: 3;
+    text-align: center
+    
+}
+
+.proposalDealApprovalCancel {
+    grid-column: 2/3;
+    grid-row: 3;
+    text-align: center
+    
+}
+
+.hideApproval{
+    display: none;
+}
+
+.showApproval{
+    display: block;
+}
+
+/* alert */
+
+.alert{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    background: rgb(25, 109, 165);
+    color: white;
+    border: 2px solid black; 
+}
+/* 
+button:hover{
+    opacity: 0.5
+} */

@@ -1,0 +1,17 @@
+<div class="proposalDealApproval">
+    <h3 class="proposalDealApprovalHeader">
+        are you sure you wont to make the {{$ctrl.proposalDeal}}?
+    </h3>   
+    <div class="proposalDealApprovalConteiner my">
+        you will give:
+        <one-object ng-repeat="oneObject in $ctrl.myObjects track by $index" object='oneObject' is-my-obj='true' is-create-proposal-page='false'></one-object>
+    </div>
+    <div class="proposalDealApprovalConteiner his">
+        and in exchange, you will get:
+        <one-object ng-repeat="oneObject in $ctrl.hisObjects track by $index" object='oneObject' is-my-obj='true' is-create-proposal-page='false'></one-object>
+    </div>
+    <button class="proposalDealApprovalButton" ng-click="$ctrl.makeAction()">MAKE {{$ctrl.proposalDeal}}</button>
+    <button class="proposalDealApprovalCancel" ng-click="$ctrl.cancel()">CANCEL</button>
+</div>
+
+<alert ng-class='$ctrl.sent' proposal-deal='$ctrl.proposalDeal'></alert>

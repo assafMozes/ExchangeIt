@@ -1,0 +1,6 @@
+{
+    "furniture": ["bed", "chair", "closet"],
+    "electronics": ["celolar", "computers", "kitchen"],
+    "tools": ["hammer", "axe", "scrowdriver"],
+    "music": ["gittare", "piano", "drums"]
+}

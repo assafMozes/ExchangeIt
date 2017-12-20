@@ -1,0 +1,31 @@
+<!--<ul class='navBar'>
+    <li class='navBarItem'><a href="default.asp">Home</a></li>
+    <li class='navBarItem'><a href="news.asp">Agent</a></li>
+    <li class='navBarItem'><a href="contact.asp">Search</a></li>
+    <li class='navBarItem'><a href="about.asp">My Jobs</a></li>
+    <li class='navBarLogo'><img src="../images/Job2.png" alt="dfy "></li>
+
+</ul>-->
+<div class="bread" ui-draggable="true" drag="man" on-drop-success="dropSuccessHandler($event,$index,men)">bread</div>
+
+<div class="user" ui-on-Drop="onDrop($event,$data,men)"> 
+     Welcome {{$ctrl.name}}
+     <button ng-click="$ctrl.logOut()">Log Out</button>
+    </div>
+
+<div class="logo" >
+    <img src="./images/ele.jpg" alt="">
+</div>
+
+<ul class='navBar'>
+   
+    <li class='navBarItem'><a ui-sref="home" ui-sref-active="active">Home</a></li>
+    <li class='navBarItem'><a ui-sref="myObjects" ui-sref-active="active">My objects</a></li>
+    <li class='navBarItem'><a ui-sref="proposals" ui-sref-active="active">Proposals</a></li>
+    <li class='navBarItem'><a ui-sref="ongoingDeals" ui-sref-active="active">Ongoing deals</a></li>
+    <li class='navBarItem'><a ui-sref="myProposals" ui-sref-active="active">My proposals</a></li>
+    <li class='navBarItem'><a ui-sref="search" ui-sref-active="active">Search</a></li>
+    <!-- <li class='navBarItem' ng-hide="$ctrl.isAdmin"><a ui-sref="admin" ui-sref-active="active">Admin</a></li>
+    <li class='navBarItem' ng-show="$ctrl.isAdmin"><a ui-sref="admin2" ui-sref-active="active">Admin2</a></li> -->
+   
+</ul>

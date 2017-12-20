@@ -1,0 +1,35 @@
+{{$ctrl.myChoosenNum}}
+{{$ctrl.hisChoosenNum}}
+<h2>make an offer to {{$ctrl.objectsUser.name}} for a barter</h2>
+<div class="createProposal">
+    <div class="createProposalHeader yourName">
+        your objects:
+    </div>
+    <button ng-click="$ctrl.makeProposal()" class="createProposalHeader makeButton" ng-disabled="$ctrl.myChoosenNum == 0 || $ctrl.hisChoosenNum == 0">MAKE PROPOSAL</button>
+    <div class="createProposalHeader hisName">
+
+        {{$ctrl.objectsUser.name}} other objects:
+    </div>
+    
+
+    <div class="createProposalConteiner my more">
+        <one-object ng-repeat="oneObject in $ctrl.myObjects track by $index" choosen-obj-num = "$ctrl.myChoosenNum"
+        object='oneObject' ng-if="!oneObject.choosen" is-my-obj='true' add-remove='"ADD"'  ng-init="$ctrl.myChoosenNum = $ctrl.myChoosenNum - 1"></one-object>
+    </div>
+    <div class="createProposalConteiner my choosen" ng-init="$ctrl.myChoosenNum = $ctrl.myObjects.length">
+        <one-object ng-repeat="oneObject in $ctrl.myObjects track by $index" 
+        object='oneObject' ng-if="oneObject.choosen" is-my-obj='true' add-remove='"REMOVE"' ng-init="$ctrl.myChoosenNum = $ctrl.myChoosenNum + 1"></one-object>
+    </div>
+    <div class="createProposalConteiner his choosen" ng-init="$ctrl.hisChoosenNum = $ctrl.hisObjects.length - 1">
+        <one-object ng-repeat="oneObject in $ctrl.hisObjects track by $index" 
+        object='oneObject' ng-if="oneObject.choosen" is-my-obj='true' add-remove='"REMOVE"' ng-init="$ctrl.hisChoosenNum = $ctrl.hisChoosenNum + 1"></one-object>
+    </div>
+    <div class="createProposalConteiner his more">
+        <one-object ng-repeat="oneObject in $ctrl.hisObjects track by $index" choosen-obj-num = "$ctrl.hisChoosenNum"
+        object='oneObject' ng-if="!oneObject.choosen" is-my-obj='true' add-remove='"ADD"' ng-init="$ctrl.hisChoosenNum = $ctrl.hisChoosenNum - 1"></one-object>
+    </div>
+</div>
+<proposal-deal-approval ng-class='$ctrl.approval' my-objects='$ctrl.myObjects' his-objects='$ctrl.hisObjects'   
+    his-details='$ctrl.objectsUser' proposal-deal='"proposal"' approval='$ctrl.approval'></proposal-deal-approval>
+    <!-- | choosenObjects
+    | choosenObjects -->

@@ -1,0 +1,19 @@
+<select name="cats" ng-model="$ctrl.choosen.cat">
+        <option selected value="chooseCat">choose category</option>
+        <option ng-repeat="(key, value) in $ctrl.cats" value="{{key}}">{{key}}</option>
+    </select>
+<!-- <select ng-options="choosenCat as choosenCat for (choosenCat, value) in $ctrl.cats" ng-model="$ctrl.choosenCat"></select> -->
+<!-- <select ng-options="choosenSub for choosenSub in $ctrl.cats[$ctrl.choosenCat]" ng-model="$ctrl.choosenSub"></select> -->
+
+<select name="subCats" ng-model="$ctrl.choosen.sub">
+        <option selected value="chooseSubCat">choose sub category</option>
+        <option ng-repeat="subCat in $ctrl.cats[$ctrl.choosen.cat]" value="{{subCat}}">{{subCat}}</option>
+    </select>
+
+<span ng-repeat="state in $ctrl.states">
+
+        <input type="checkbox" name="{{state}}" value="{{state}}" ng-model="$ctrl.choosen.myStates[state]" checked="checked">{{state}}
+    </span>
+
+<button ng-click="$ctrl.search()">Search</button>
+<one-object ng-repeat="oneObject in $ctrl.objects track by $index" object='oneObject' is-my-obj='false'></one-object>

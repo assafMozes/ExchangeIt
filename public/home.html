@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <!-- <script src="https://code.angularjs.org/1.6.5/angular-route.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+    <!-- <script src="ngDraggable.js"></script> -->
+    <!-- <script src="../bower_components/ngDraggable/ngDraggable.js"></script> -->
+    <script src="../bower_components/angular-native-dragdrop/draganddrop.min.js"></script>
+    <script src="../javascripts/routeConfig.js"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Exchange It</title>
+</head>
+
+<body ng-app="ts" ng-controller="main">  
+    <!-- <div class="header" > -->
+
+        <header  class="header" isAdmin='user.isAdmin' email='user.email' ></header>
+        <div>
+           
+        </div>
+    <!-- </div> -->
+    <ui-view class="content" ng-drop="true"></ui-view>
+</body>
+
+<!--directives-->
+<!-- <script src="../javascripts/directives/navBar.js"></script> -->
+
+
+<!--component-->
+<script src="../javascripts/components/header/header.js"></script>
+<script src="../javascripts/components/objects/objects.js"></script>
+<script src="../javascripts/components/oneObject/oneObject.js"></script>
+<script src="../javascripts/components/searchBar/searchBar.js"></script>
+<script src="../javascripts/components/createProposal/createProposal.js"></script>
+<script src="../javascripts/components/proposalDealApproval/proposalDealApproval.js"></script>
+<script src="../javascripts/components/alert/alert.js"></script>
+<script src="../javascripts/components/proposals/proposals.js"></script>
+
+
+<!--controllers-->
+<script src="../javascripts/controllers/main.js"></script>
+<!-- <script src="../javascripts/controllers/loginPage.js"></script> -->
+
+<!--fillters-->
+<script src="../javascripts/filters/filterObjects.js"></script>
+
+<!--services-->
+<script src="../javascripts/services/usersFetcher.js"></script>
+<script src="../javascripts/services/objectsFetcher.js"></script>
+<script src="../javascripts/services/proposalsFetcher.js"></script>
+<!-- <script src="./javascripts/services/factories/canvasFactory.js"></script> -->
+
+<!-- <script src="./images/efo.jpg"></script> -->
+
+
+</html>

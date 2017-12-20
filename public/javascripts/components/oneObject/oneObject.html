@@ -1,0 +1,8 @@
+<div class="oneObject">
+    <h3 class="oneObject-cat">Category:{{$ctrl.object.cat}}</h3>
+    <h4 class="oneObject-subCat">Object:{{$ctrl.object.subCat}}</h4>
+    <span class="oneObject-state">state:{{$ctrl.object.state}}</span>
+    <button ng-hide="$ctrl.isMyObj"><a ui-sref="createProposal({objectId: $ctrl.object.id, objectsUserId: $ctrl.object.userId})">I wont this</a></button>
+    <button ng-click="$ctrl.addRemoveObject()" ng-show="$ctrl.addRemove" ng-disabled="$ctrl.choosenObjNum == 2">{{$ctrl.addRemove}}</button>
+    <!-- <img src="{{$ctrl.image}}" alt="fff" class="oneObject-image"> -->
+</div>
